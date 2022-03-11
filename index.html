@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <style>
+.line1 {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px;
+}
+
+.line2 {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px;
+}
+
+.line3 {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px;
+}
+
+#box1, #box2, #box3, #box4, #box5, #box6, #box7, #box8, #box9, #box10, #box11, #box12, #box13, #box14, #box15, #box16, #box17, #box18 {
+  border: 2px solid black;
+  height: 200px;
+  with: 200px;
+  margin: 3px;
+}
+
+  </style>
+</head>
+
+<body>
+    <div onclick="testarMath(this)">
+     Clique aqui!
+    </div>
+
+  <div class="line1">
+    <div id="box1" class="qp" onclick="mudardc(this)"></div>
+    <div id="box2" class="qi" onclick="mudardc(this)"></div>
+    <div id="box3" class="qp" onclick="mudardc(this)"></div>
+    <div id="box4" class="qi" onclick="mudardc(this)"></div>
+    <div id="box5" class="qp" onclick="mudardc(this)"></div>
+    <div id="box6" class="qi" onclick="mudardc(this)"></div>
+  </div>  
+  
+  <div class="line2">
+    <div id="box7" class="qp" onclick="mudardc(this)"></div>
+    <div id="box8" class="qi" onclick="mudardc(this)"></div>
+    <div id="box9" class="qp" onclick="mudardc(this)"></div>
+    <div id="box10" class="qi" onclick="mudardc(this)"></div>
+    <div id="box11" class="qp" onclick="mudardc(this)"></div>
+    <div id="box12" class="qi" onclick="mudardc(this)" value="12"></div>
+  </div>
+  
+  <div class="line3">
+    <div id="box13" class="qp" onclick="mudardc(this)"></div>
+    <div id="box14" class="qi" onclick="mudardc(this)"></div>
+    <div id="box15" class="qp" onclick="mudardc(this)"></div>
+    <div id="box16" class="qi" onclick="mudardc(this)"></div>
+    <div id="box17" class="qp" onclick="mudardc(this)"></div>
+    <div id="box18" class="qi" onclick="mudardc(this)"></div>
+  </div>
+      
+<button onclick="colorirPar()">Colorir Par</button>
+<button onclick="colorirImpar()">Colorir Impar</button>
+<button onclick="limpar()">Limpar</button>
+  
+<script type="text/javascript">
+
+  function testarMath(elemento){
+    elemento.innerHTML = Math.PI;
+  }
+
+ function gerarCor(){
+   var r,g,b;
+   
+   r = Math.floor(Math.random()*255);
+   g = Math.floor(Math.random()*255);
+   b = Math.floor(Math.random()*255);
+   
+   return 'rgb('+r+','+g+','+b+')';
+ }
+
+ function mudardc(elemento){
+   var novaCor= gerarCor();
+   elemento.style.backgroundColor=novaCor;
+ }
+
+  function colorirPar(){
+    var elements = document.getElementsByClassName("qp")
+
+    for (let i of elements){
+        var novaCor = gerarCor();
+            i.style.backgroundColor = novaCor;
+        }
+}
+
+function colorirImpar(){
+    var elements = document.getElementsByClassName("qi")
+
+    for (let i of elements){
+        var novaCor = gerarCor();
+            i.style.backgroundColor = novaCor;
+        }
+}
+
+function limpar(){
+    var elements = document.getElementsByTagName("div")
+
+    for (let i of elements){
+            i.style.backgroundColor = 'rgb(255, 255, 255)';
+        }
+}
+    
+</script>
+  
+</body>
+  
+</html>
